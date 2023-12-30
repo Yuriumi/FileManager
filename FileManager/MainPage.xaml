@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FileManager.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="E:\Temp\FileManager\FileManager\Resources\Images\logo.png"
+                HeightRequest="185"
+                Aspect="AspectFit"/>
+
+            <Label
+                Text="工作室文件管理系统"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="请选择你的登陆身份"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <RadioButton Content="指导教师" CheckedChanged="OnClickRadioButton"/>
+                <RadioButton Content="管理员" CheckedChanged="OnClickRadioButton"/>
+                <RadioButton Content="正式成员" CheckedChanged="OnClickRadioButton"/>
+                <RadioButton Content="实习生" CheckedChanged="OnClickRadioButton"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="40">
+                <Button
+                    x:Name="UpdateBtn"
+                    Text="上传文件" 
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="OnUpdateClicked"
+                    HorizontalOptions="Center" />
+
+                <Button
+                    x:Name="DownloadBtn"
+                    Text="下载文件" 
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="OnDownloadClicked"
+                    HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Label
+                Text="控制台"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"
+                HorizontalOptions="Start"/>
+
+            <Label
+                x:Name="NowTime"
+                Text=""
+                FontSize="20"
+                HorizontalOptions="Start"/>
+            
+            <ScrollView Orientation="Vertical">
+                <Label
+                    x:Name="Console"
+                    Text="请完成上述身份配置......"
+                    FontSize="20"
+                    HorizontalOptions="Start"/>
+            </ScrollView>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
